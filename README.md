@@ -1,16 +1,6 @@
-# 🚧 Typescript Project Template
+# Runtime
 
-Easy way to start typescript project!
-
-## Feature
-
-1. Docker Build
-2. NPM Build
-3. Debugger
-4. Import path
-5. CI
-6. Mocha
-7. NYC
+REST API + Socket.io Server Module
 
 ## Support Git History
 
@@ -22,4 +12,4 @@ Based on these amazing projects:
 
 ### License
 
-MIT
+[GPL-3.0 License](./LICENSE)
