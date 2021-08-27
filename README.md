@@ -8,13 +8,11 @@
 
 REST API + Socket.io Server Module
 
-## Support Git History
+### Information
 
-### Credits
-
-Based on these amazing projects:
-
-* rhea by [JeongHyeon Kim](https://github.com/rhea-so)
+* [CHANGELOG](./CHANGELOG.md)
+* [CONTRIBUTING](./CONTRIBUTING.md)
+* [CONTRIBUTORS](./CONTRIBUTORS.md)
 
 ### License
 

@@ -18,7 +18,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(msg, ctx) => {
-					console.log('Hello, World!', msg);
 					responsed = true;
 				},
 
@@ -57,12 +56,10 @@ export function actorBasicTest() {
 				(state = {}, msg, ctx) => {
 					if (state[msg.name] === undefined) {
 						// 처음보는 요청인 경우
-						console.log('Hello, World!', msg);
 						state[msg.name] = true;
 						return state;
 					} else {
 						// 똑같은 요청이 또 들어온 경우
-						console.log('Hello, Again!', msg);
 						memoization = true;
 						return state;
 					}
@@ -102,7 +99,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				async (msg, ctx) => {
-					console.log(msg.value);
 					// ping: Pong is a little slow. So I'm giving myself a little handicap :P
 					await delay(10);
 					NACT.dispatch(msg.sender, { value: ctx.name, sender: ctx.self });
@@ -118,7 +114,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(msg, ctx) => {
-					console.log(msg.value);
 					didPong = true;
 					NACT.dispatch(msg.sender, { value: ctx.name, sender: ctx.self });
 				},
@@ -155,7 +150,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(msg, ctx) => {
-					console.log('Hello, World!', msg.name);
 					NACT.dispatch(msg.sender, msg.name); // ② 받은 sender에게 응답을 되돌려준다
 				},
 
@@ -193,7 +187,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				async (state = {}, msg, ctx) => {
-					console.log('Hello, World!', msg.name);
 					await delay(100);
 					NACT.dispatch(msg.sender, msg.name);
 				},
@@ -236,8 +229,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(msg, ctx) => {
-					console.log('I\'m Parent!', msg);
-
 					const myChild = ctx.children.get('child');
 					if (myChild !== undefined) {
 						NACT.dispatch(myChild, msg);
@@ -254,7 +245,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(msg, ctx) => {
-					console.log('I\'m Child!', msg);
 					responsed = true;
 				},
 
@@ -292,7 +282,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(msg, ctx) => {
-					console.log('I\'m Parent!', msg);
 					responsed = true;
 				},
 
@@ -306,7 +295,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(msg, ctx) => {
-					console.log('I\'m Child!', msg);
 					NACT.dispatch(ctx.parent, msg);
 				},
 
@@ -346,7 +334,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(state = {}, msg, ctx) => {
-					console.log('Hello, World!', msg);
 					throw 'NACT.spawn - message handler throw!';
 				},
 
@@ -362,8 +349,6 @@ export function actorBasicTest() {
 						// ctx.resume - 현재 상태 그대로 액터를 재개해서 다음 메시지를 계속 처리하도록 함
 						// ctx.escalate - 부모 액터로 결정을 넘김
 
-						console.log('msg:', msg);
-						console.log('error:', error);
 						crashedTime++;
 
 						// 여기서 delay를 쓰면 그만큼 기다린다
@@ -403,7 +388,6 @@ export function actorBasicTest() {
 
 				// 메시지 핸들러 함수
 				(msg, ctx) => {
-					console.log('Hello, World!', msg);
 					responsed = true;
 				},
 
