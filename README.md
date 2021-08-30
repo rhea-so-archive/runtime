@@ -13,6 +13,7 @@ REST API + Socket.io Server Module
 * [CHANGELOG](./CHANGELOG.md)
 * [CONTRIBUTING](./CONTRIBUTING.md)
 * [CONTRIBUTORS](./CONTRIBUTORS.md)
+* [ROADMAP](./ROADMAP.md)
 
 ### License
 
